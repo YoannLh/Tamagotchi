@@ -7,8 +7,18 @@ class Shower extends React.Component {
 		super()
 	}
 
+	handlePress() {
+		console.log("Shower")
+	}
+
 	render() {
-		return <View style={styles.container}><Text style={styles.text}>Shower</Text></View>
+		return (
+			<View 
+				style={styles.container}
+				onStartShouldSetResponder={() => this.handlePress()}>
+				<Text style={styles.text}>Shower</Text>
+			</View>
+		)
 	}
 }
 

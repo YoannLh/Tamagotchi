@@ -7,8 +7,18 @@ class Care extends React.Component {
 		super()
 	}
 
+	handlePress() {
+		console.log("Care")
+	}
+
 	render() {
-		return <View style={styles.container}><Text style={styles.text}>Care</Text></View>
+		return (
+			<View 
+				style={styles.container}
+				onStartShouldSetResponder={() => this.handlePress()}>
+				<Text style={styles.text}>Care</Text>
+			</View>
+		)
 	}
 }
 

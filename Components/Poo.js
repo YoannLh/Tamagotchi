@@ -7,8 +7,18 @@ class Poo extends React.Component {
 		super()
 	}
 
+	handlePress() {
+		console.log("Poo")
+	}
+
 	render() {
-		return <View style={styles.container}><Text style={styles.text}>Poo</Text></View>
+		return (
+			<View 
+				style={styles.container}
+				onStartShouldSetResponder={() => this.handlePress()}>
+				<Text style={styles.text}>Poo</Text>
+			</View>
+		)
 	}
 }
 

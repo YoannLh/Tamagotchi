@@ -7,8 +7,18 @@ class Food extends React.Component {
 		super()
 	}
 
+	handlePress() {
+		console.log("Food")
+	}
+
 	render() {
-		return <View style={styles.container}><Text style={styles.text}>Food</Text></View>
+		return (
+			<View 
+				style={styles.container} 
+				onStartShouldSetResponder={() => this.handlePress()}>
+				<Text style={styles.text}>Food</Text>
+			</View>
+		)
 	}
 }
 
@@ -25,3 +35,4 @@ const styles = StyleSheet.create({
 		color: 'black'
 	}
 });
+

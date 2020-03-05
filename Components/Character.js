@@ -7,8 +7,17 @@ class Character extends React.Component {
 		super()
 	}
 
+	handlePress() {
+		console.log("Character")
+	}
+
 	render() {
-		return <View style={styles.container}><Text style={styles.text}>Character</Text></View>
+		return (
+			<View 
+				style={styles.container}>
+				<Text style={styles.text} onPress={() => this.handlePress()}>Character</Text>
+			</View>
+		)
 	}
 }
 

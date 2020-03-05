@@ -4,7 +4,7 @@ import Food from '../Components/Food'
 import Care from '../Components/Care'
 import Play from '../Components/Play'
 
-class IconOnLeft extends React.Component {
+class IconsOnTop extends React.Component {
 
 	constructor() {
 		super()
@@ -21,7 +21,7 @@ class IconOnLeft extends React.Component {
 	}
 }
 
-export default IconOnLeft;
+export default IconsOnTop;
 
 const styles = StyleSheet.create({
 	container: {

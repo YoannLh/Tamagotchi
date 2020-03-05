@@ -4,7 +4,7 @@ import Clean from '../Components/Clean'
 import Poo from '../Components/Poo'
 import Shower from '../Components/Shower'
 
-class IconOnLeft extends React.Component {
+class IconsOnBottom extends React.Component {
 
 	constructor() {
 		super()
@@ -21,7 +21,7 @@ class IconOnLeft extends React.Component {
 	}
 }
 
-export default IconOnLeft;
+export default IconsOnBottom;
 
 const styles = StyleSheet.create({
 	container: {
