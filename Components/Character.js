@@ -1,5 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Image, Text, StyleSheet } from 'react-native'
+
+
+
+//import arrayAnimations from '../animations/arrayAnimations'
+
+let requireImage = require('../animations/dragon.jpg');
+
+//console.log(requireImage);
+
+
 
 class Character extends React.Component {
 
@@ -15,7 +25,9 @@ class Character extends React.Component {
 		return (
 			<View 
 				style={styles.container}>
-				<Text style={styles.text} onPress={() => this.handlePress()}>Character</Text>
+					<Image style={styles.image}  
+						   onStartShouldSetResponder={() => this.handlePress()}
+						   source={ requireImage } />
 			</View>
 		)
 	}
@@ -30,7 +42,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: 'rgba(0,0,255,0.2)',
 	},
-	text: {
-		color: 'black'
+	image: {
+		height: 200,
+		width: 200
 	}
 });

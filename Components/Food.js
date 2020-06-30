@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Image, Text, StyleSheet } from 'react-native'
 
 class Food extends React.Component {
 
@@ -16,7 +16,7 @@ class Food extends React.Component {
 			<View 
 				style={styles.container} 
 				onStartShouldSetResponder={() => this.handlePress()}>
-				<Text style={styles.text}>Food</Text>
+				<Image style={styles.image} source={ require('../images/pizza-slice-solid.png') } />
 			</View>
 		)
 	}
@@ -31,8 +31,9 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
-	text: {
-		color: 'black'
+	image: {
+		width: 30,
+		height: 30
 	}
 });
 

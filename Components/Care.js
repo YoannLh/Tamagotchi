@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Image, Text, StyleSheet } from 'react-native'
 
 class Care extends React.Component {
 
@@ -16,7 +16,7 @@ class Care extends React.Component {
 			<View 
 				style={styles.container}
 				onStartShouldSetResponder={() => this.handlePress()}>
-				<Text style={styles.text}>Care</Text>
+				<Image style={styles.image} source={ require('../images/syringe-solid.png') }  />
 			</View>
 		)
 	}
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
-	text: {
-		color: 'black'
+	image: {
+		height: 30,
+		width: 30
 	}
 });
