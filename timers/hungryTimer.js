@@ -1,3 +1,4 @@
+
 // start timer of hunger
 
 class HungryTimer {
@@ -10,7 +11,7 @@ class HungryTimer {
 	initTimerOfHunger() {
 		
 		this.hunger--;
-		console.log(this.hunger);
+		console.log("hunger = " + this.hunger);
 
 		if(this.hunger < 50) {
 			console.log("the pet is hungry")

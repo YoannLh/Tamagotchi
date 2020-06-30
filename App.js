@@ -22,8 +22,7 @@ const styles = StyleSheet.create({
         marginTop: 25,
         height: '100%',
         justifyContent: 'space-between',
-        backgroundColor: '#fff',
-        color: 'black'
+        backgroundColor: '#fff'
     },
 });
 
