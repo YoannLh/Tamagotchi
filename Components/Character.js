@@ -5,7 +5,7 @@ import { View, Image, Text, StyleSheet } from 'react-native'
 
 //import arrayAnimations from '../animations/arrayAnimations'
 
-let requireImage = require('../animations/dragon.jpg');
+let requireImage = require('../animations/poo2.gif');
 
 //console.log(requireImage);
 
