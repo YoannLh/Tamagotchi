@@ -4,7 +4,14 @@ const initialState = { requireImage: require('../../animations/little.gif') }
 
 function getAnimationsWhenPressed(state = initialState, action) {
 
-	let nextState = {}
+	let nextState;
+
+	if (state != initialState) {
+
+		console.log("nextState !=");
+
+		let temp = setTimeout( () => { state = initialState }, 4000 );
+	}
 
 	switch (action.type) {
 
@@ -22,7 +29,7 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		case 'CARE':
 
-	  		nextState = { ...state, requireImage: require('../../animations/eating.gif') };
+	  		nextState = { ...state, requireImage: require('../../animations/care.gif') };
 
 		  	return nextState
 
@@ -46,7 +53,7 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		case 'SHOWER':
 
-	  		nextState = { ...state, requireImage: require('../../animations/eating.gif') };
+	  		nextState = { ...state, requireImage: require('../../animations/shower.gif') };
 
 		  	return nextState
 
@@ -54,13 +61,18 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
     	return state
 	}
-
-	if (nextState != {}) {
-
-		nextState = setTimeout( () => { return nextState = {} }, 4000 );
-
-		state = setTimeout( () => { return state }, 4000 );
-	}
 }
 
-export default getAnimationsWhenPressed
+export default getAnimationsWhenPressed;
+
+
+
+
+
+
+
+
+
+
+
+
