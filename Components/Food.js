@@ -8,7 +8,8 @@ class Food extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			ex: ""
+			
+			//
 		}
 	}
 
@@ -18,8 +19,6 @@ class Food extends React.Component {
 		const action = { type: "FOOD" };
 
 		this.props.dispatch(action);
-
-		console.log(action);
 	}
 
 	render() {
@@ -48,11 +47,9 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
 
-	console.log(state.ex)
-
 	return {
 
-		ex: state.ex
+		//
 	}
 }
 

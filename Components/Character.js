@@ -8,8 +8,7 @@ class Character extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			requireImage : this.props.requireImage,
-			ex : this.props.ex
+			requireImage : this.props.requireImage
 		}
 	}
 
@@ -21,10 +20,6 @@ class Character extends React.Component {
 
 		this.props.dispatch(action);
 
-		console.log(action);
-
-		console.log("onpress : " + this.state.requireImage);
-
 	}
 
 	render() {
@@ -35,7 +30,6 @@ class Character extends React.Component {
 					<Image style={styles.image}  
 						   onStartShouldSetResponder={() => this.handlePress()}
 						   source={ this.props.requireImage } />
-					<Text>{ this.props.ex }</Text>
 			</View>	
 		)
 	}
@@ -56,12 +50,9 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
 
-	console.log("global state : " + state.requireImage)
-
 	return {
 
-		requireImage : state.requireImage,
-		ex: state.ex
+		requireImage : state.requireImage
 	}
 }
 

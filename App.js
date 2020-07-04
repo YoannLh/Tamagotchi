@@ -8,7 +8,7 @@ import hungryTimer from './timers/hungryTimer'
 
 import { Provider } from 'react-redux'
 import Store from './Store/configureStore'
-import getAnimations from './Store/Reducers/getAnimations'
+//import getAnimations from './Store/Reducers/getAnimations'
 
 export default function App() {
     return (
