@@ -6,13 +6,19 @@ import IconsOnBottom from './Containers/IconsOnBottom'
 import birthTimer from './timers/birthTimer' 
 import hungryTimer from './timers/hungryTimer'
 
+import { Provider } from 'react-redux'
+import Store from './Store/configureStore'
+import getAnimations from './Store/Reducers/getAnimations'
+
 export default function App() {
     return (
-        <View style={styles.container}>
-            <IconsOnTop />
-            <Character />
-            <IconsOnBottom />
-        </View>
+        <Provider store={Store}>
+            <View style={styles.container}>
+                <IconsOnTop />
+                <Character />
+                <IconsOnBottom />
+            </View>
+        </Provider>
     )
 }
 
@@ -25,5 +31,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
 });
+
+
+
 
 

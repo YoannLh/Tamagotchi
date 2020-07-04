@@ -14,7 +14,7 @@ class HungryTimer {
 		console.log("hunger = " + this.hunger);
 
 		if(this.hunger < 50) {
-			console.log("the pet is hungry")
+			console.log("the pet is hungry");
 		}
 	}
 }

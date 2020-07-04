@@ -1,39 +1,45 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native'
 
-
-
-//import arrayAnimations from '../animations/arrayAnimations'
-
-let requireImage = require('../animations/poo2.gif');
-
-//console.log(requireImage);
-
-
+import { connect } from 'react-redux'
 
 class Character extends React.Component {
 
-	constructor() {
-		super()
+	constructor(props) {
+		super(props);
+		this.state = {
+			requireImage : this.props.requireImage,
+			ex : this.props.ex
+		}
 	}
 
 	handlePress() {
-		console.log("Character")
+
+		console.log("Character");
+
+		const action = { type: "LOVE" };
+
+		this.props.dispatch(action);
+
+		console.log(action);
+
+		console.log("onpress : " + this.state.requireImage);
+
 	}
 
 	render() {
+
 		return (
 			<View 
 				style={styles.container}>
 					<Image style={styles.image}  
 						   onStartShouldSetResponder={() => this.handlePress()}
-						   source={ requireImage } />
-			</View>
+						   source={ this.props.requireImage } />
+					<Text>{ this.props.ex }</Text>
+			</View>	
 		)
 	}
 }
-
-export default Character;
 
 const styles = StyleSheet.create({
 	container: {
@@ -47,3 +53,33 @@ const styles = StyleSheet.create({
 		width: 200
 	}
 });
+
+const mapStateToProps = (state) => {
+
+	console.log("global state : " + state.requireImage)
+
+	return {
+
+		requireImage : state.requireImage,
+		ex: state.ex
+	}
+}
+
+export default connect(mapStateToProps)(Character);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
