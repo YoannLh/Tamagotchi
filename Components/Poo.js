@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native'
 
+import { connect } from 'react-redux'
+
 class Poo extends React.Component {
 
 	constructor() {
@@ -8,7 +10,12 @@ class Poo extends React.Component {
 	}
 
 	handlePress() {
+
 		console.log("Poo")
+
+		const action = { type: "POO" };
+
+		this.props.dispatch(action);
 	}
 
 	render() {
@@ -22,8 +29,6 @@ class Poo extends React.Component {
 	}
 }
 
-export default Poo;
-
 const styles = StyleSheet.create({
 	container: {
 		width: 50,
@@ -36,3 +41,27 @@ const styles = StyleSheet.create({
 		height: 30
 	}
 });
+
+const mapStateToProps = (state) => {
+
+	return {
+
+	}
+}
+
+export default connect(mapStateToProps)(Poo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

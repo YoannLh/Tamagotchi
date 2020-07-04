@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native'
 
+import { connect } from 'react-redux'
+
 class Shower extends React.Component {
 
 	constructor() {
@@ -8,7 +10,12 @@ class Shower extends React.Component {
 	}
 
 	handlePress() {
-		console.log("Shower")
+
+		console.log("Shower");
+
+		const action = { type: "SHOWER" };
+
+		this.props.dispatch(action);
 	}
 
 	render() {
@@ -22,8 +29,6 @@ class Shower extends React.Component {
 	}
 }
 
-export default Shower;
-
 const styles = StyleSheet.create({
 	container: {
 		width: 50,
@@ -36,3 +41,31 @@ const styles = StyleSheet.create({
 		height: 30
 	}
 });
+
+const mapStateToProps = (state) => {
+
+	return {
+
+	}
+}
+
+export default connect(mapStateToProps)(Shower);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

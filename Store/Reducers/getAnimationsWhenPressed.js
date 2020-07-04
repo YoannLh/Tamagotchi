@@ -1,11 +1,10 @@
 
-// envoyer des timeout directement ?
 
 const initialState = { requireImage: require('../../animations/little.gif') }
 
 function getAnimationsWhenPressed(state = initialState, action) {
 
-	let nextState;
+	let nextState = {}
 
 	switch (action.type) {
 
@@ -54,6 +53,13 @@ function getAnimationsWhenPressed(state = initialState, action) {
 	default:
 
     	return state
+	}
+
+	if (nextState != {}) {
+
+		nextState = setTimeout( () => { return nextState = {} }, 4000 );
+
+		state = setTimeout( () => { return state }, 4000 );
 	}
 }
 

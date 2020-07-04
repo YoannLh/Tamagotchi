@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native'
 
+import { connect } from 'react-redux'
+
 class Care extends React.Component {
 
 	constructor() {
@@ -8,7 +10,12 @@ class Care extends React.Component {
 	}
 
 	handlePress() {
-		console.log("Care")
+
+		console.log("Care");
+
+		const action = { type: "CARE" };
+
+		this.props.dispatch(action);
 	}
 
 	render() {
@@ -22,8 +29,6 @@ class Care extends React.Component {
 	}
 }
 
-export default Care;
-
 const styles = StyleSheet.create({
 	container: {
 		width: 50,
@@ -36,3 +41,24 @@ const styles = StyleSheet.create({
 		width: 30
 	}
 });
+
+const mapStateToProps = (state) => {
+
+	return {
+
+	}
+}
+
+export default connect(mapStateToProps)(Care);
+
+
+
+
+
+
+
+
+
+
+
+

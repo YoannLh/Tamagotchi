@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native'
 
+import { connect } from 'react-redux'
+
 class Clean extends React.Component {
 
 	constructor() {
@@ -8,7 +10,11 @@ class Clean extends React.Component {
 	}
 
 	handlePress() {
-		console.log("Clean")
+		console.log("Clean");
+
+		const action = { type: "CLEAN" };
+
+		this.props.dispatch(action);
 	}
 
 	render() {
@@ -22,8 +28,6 @@ class Clean extends React.Component {
 	}
 }
 
-export default Clean;
-
 const styles = StyleSheet.create({
 	container: {
 		width: 50,
@@ -36,3 +40,17 @@ const styles = StyleSheet.create({
 		height: 30
 	}
 });
+
+const mapStateToProps = (state) => {
+
+	return {
+
+	}
+}
+
+export default connect(mapStateToProps)(Clean);
+
+
+
+
+
