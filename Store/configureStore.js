@@ -1,6 +1,6 @@
 // Store/configureStore.js
 
 import { createStore } from 'redux';
-import getAnimationsWhenPressed from './Reducers/getAnimationsWhenPressed'
+import ManageAnimations from './Reducers/ManageAnimations'
 
-export default createStore(getAnimationsWhenPressed);
+export default createStore(ManageAnimations);

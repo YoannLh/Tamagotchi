@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import Character from './Components/Character'
 import IconsOnTop from './Containers/IconsOnTop'
 import IconsOnBottom from './Containers/IconsOnBottom'
-import birthTimer from './timers/birthTimer' 
-import hungryTimer from './timers/hungryTimer'
+import BirthTimer from './timers/BirthTimer' 
+import HungryTimer from './timers/HungryTimer'
 
 import { Provider } from 'react-redux'
 import Store from './Store/configureStore'
@@ -13,6 +13,8 @@ export default function App() {
     return (
         <Provider store={Store}>
             <View style={styles.container}>
+                <BirthTimer />
+                <HungryTimer />
                 <IconsOnTop />
                 <Character />
                 <IconsOnBottom />

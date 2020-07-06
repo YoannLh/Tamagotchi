@@ -1,29 +1,74 @@
+import React from 'react'
 
-// timer of birth's pet
+import { connect  } from 'react-redux'
 
-class BirthTimer {
+class BirthTimer extends React.Component {
 
 	constructor() {
-		//this.init = setInterval( () => { this.initTimerOfBirth() }, 0 );
+
+		super();
+
 		this.beginTimerOfEclosion;
+		this.timeoutOfEclosion;
 	}
 
-	initTimerOfBirth() {
+	componentDidMount() {
+
 		console.log("birth");
-		//clearInterval(this.init);
+
+		const action = { type: "BIRTH" };
+
+		this.props.dispatch(action);
+
 		this.beginTimerOfEclosion = setTimeout( () => { this.initTimerBeforeEclosion() }, 10000 );
-		console.log("go")
+
 	}
 
 	initTimerBeforeEclosion() {
-		console.log("éclosion")
-		//clearInterval(this.beginTimerOfEclosion);
+
+		console.log("éclosion");
+
+		const action = { type: "ECLOSION" };
+
+		this.props.dispatch(action);
+
+		this.timeoutOfEclosion = setTimeout( () => { this.initPet() }, 4000 );
+
 	}
-	
+
+	initPet() {
+
+		console.log("new little pet");
+
+		const action = { type: "LITTLE" };
+
+		this.props.dispatch(action);
+
+	}	
+
+	render() {
+
+		return null;
+	}
 }
 
-const birthTimer = new BirthTimer();
+const mapStateToProps = (state) => {
 
-birthTimer.initTimerOfBirth();
+	return {
+
+	}
+}
+
+export default connect(mapStateToProps)(BirthTimer);
+
+
+
+
+
+
+
+
+
+
 
 
