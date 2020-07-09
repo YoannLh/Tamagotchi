@@ -13,7 +13,6 @@ class HungryTimer extends React.Component {
 
 		this.state = { 
 
-			hunger: 100
 		}
 	}
 
@@ -24,8 +23,6 @@ class HungryTimer extends React.Component {
 		console.log("hunger = " + this.state.hunger);
 
 		this.checkIfHungry();
-
-		//this.checkIfFoodExists();
 	}
 
 	checkIfHungry() {
@@ -49,46 +46,8 @@ class HungryTimer extends React.Component {
 		}
 	}
 
-	componentDidMount() {
+	checkIfFoodExists() {
 
-		console.log("coucou did mount");
-	}
-
-	componentDidUpdate() {
-
-		console.log("coucou did update");
-
-		if(this.props.food != 0) {
-
-			console.log("food != 0")
-
-			this.setState((state, props) => {
-
-				hunger: this.state.hunger + this.props.food
-			})
-
-			console.log(this.state.hunger)
-
-			//this.props.food = 0
-		}
-
-		if(this.state.hunger > 100) {
-
-			this.setState((state) => { hunger: 100 })
-
-			console.log("the pet is not hungry");
-
-			const action = { type: "PROBLEM" };
-
-			this.props.dispatch(action);
-		}
-
-		console.log("food = " + this.props.food)
-	}
-
-	componentWillUnmount() {
-
-		console.log("coucou will unmount")
 	}
 
 	render() {
@@ -112,7 +71,7 @@ const mapStateToProps = (state) => {
 
 	return {
 		
-		food: state.food
+		AddFood: state.food
 	}
 }
 

@@ -62,7 +62,7 @@ const mapStateToProps = (state) => {
 
 	return {
 
-		requireImage : state.requireImage
+		requireImage : state.animations.requireImage
 	}
 }
 

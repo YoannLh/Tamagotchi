@@ -3,25 +3,15 @@
 const initialState = { 
 
 	requireImage: require('../../animations/little.gif'),
-	food: 25
+	addFood: 25
 
 }
 
 function getAnimationsWhenPressed(state = initialState, action) {
 
-	console.log("début initialState.food : " + initialState.food)
-
 	console.log("state : " + state);
 
 	let nextState;
-
-	if (state != initialState) {
-
-		//console.log("nextState !=");
-
-		//nextState = setTimeout( () => { state = { requireImage: require('../../animations/little.gif') } }, 4000 );
-	
-	}
 
 	switch (action.type) {
 
@@ -105,15 +95,6 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		case "ADD_FOOD":
 
-		console.log("get food")
-
-		console.log("milieu initialState.food = " + initialState.food)
-
-		nextState = { ...state, food: initialState.food };
-
-		console.log("fin initialState.food = " + initialState.food)
-
-		return nextState || state
 
 	default:
 

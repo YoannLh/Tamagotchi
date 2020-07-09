@@ -1,25 +1,25 @@
 
 
-// const initialState = { hunger: "" }
+const initialState = { hunger: 100 }
 
-// function getValuesWhenButtonsPressed(state = initialState, action) {
+function getValuesWhenButtonsPressed(state = initialState, action) {
 
-// 	console.log("state : " + state);
+	console.log("state : " + state);
 
-// 	let nextState;
+	let nextState;
 
-// 	switch (action.type) {
+	switch (action.type) {
 
-// 		case "ADD_FOOD":
+		case "ADD_FOOD":
 
-// 		nextState = { ...state, hunger: hunger + 25 };
+		nextState = { ...state, hunger: "" };
 
-// 		return nextState;
+		return nextState;
 
-// 	default:
+	default:
 
-//     	return state;
-// 	}
-// }
+    	return state;
+	}
+}
 
-// export default getValuesWhenButtonsPressed;
+export default getValuesWhenButtonsPressed;
