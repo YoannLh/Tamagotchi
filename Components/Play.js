@@ -16,6 +16,17 @@ class Play extends React.Component {
 		const action = { type: "PLAY" };
 
 		this.props.dispatch(action);
+
+		this.changeAnimations();
+	}
+
+	changeAnimations() {
+
+		console.log("changeAnimations");
+
+		const action = { type: "CHANGE_ANIMATION" };
+
+		setTimeout( () => { this.props.dispatch(action) }, 4000);
 	}
 
 	render() {

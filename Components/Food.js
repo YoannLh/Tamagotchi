@@ -7,18 +7,42 @@ class Food extends React.Component {
 
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			
-			//
+			//food: this.props.food
 		}
 	}
 
 	handlePress() {
+
 		console.log("Food")
 
 		const action = { type: "FOOD" };
 
 		this.props.dispatch(action);
+
+		this.addFoodWhenPressed(); 
+
+		this.changeAnimations();
+	}
+
+	addFoodWhenPressed() {
+
+		console.log("add food")
+
+		const action = { type: "ADD_FOOD" }
+
+		this.props.dispatch(action);
+	}
+
+	changeAnimations() {
+
+		console.log("changeAnimations");
+
+		const action = { type: "CHANGE_ANIMATION" };
+
+		setTimeout( () => { this.props.dispatch(action) }, 4000);
 	}
 
 	render() {

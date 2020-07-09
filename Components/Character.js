@@ -8,7 +8,7 @@ class Character extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			requireImage : this.props.requireImage
+			requireImage : props.requireImage
 		}
 	}
 
@@ -20,6 +20,16 @@ class Character extends React.Component {
 
 		this.props.dispatch(action);
 
+		this.changeAnimations();
+
+	}
+	changeAnimations() {
+
+		console.log("changeAnimations");
+
+		const action = { type: "CHANGE_ANIMATION" };
+
+		setTimeout( () => { this.props.dispatch(action) }, 4000);
 	}
 
 	render() {
@@ -57,17 +67,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Character);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
