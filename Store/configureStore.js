@@ -2,7 +2,7 @@
 
 import { createStore } from 'redux';
 
-import rootReducer from './Reducers/index'
+import rootReducer from './Reducers/combineReducer'
 
 export default createStore(rootReducer);
 

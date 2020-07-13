@@ -27,7 +27,7 @@ class Character extends React.Component {
 
 		console.log("changeAnimations");
 
-		const action = { type: "CHANGE_ANIMATION" };
+		const action = { type: "KILL_CURRENT_ANIMATION" };
 
 		setTimeout( () => { this.props.dispatch(action) }, 4000);
 	}

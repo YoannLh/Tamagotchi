@@ -9,25 +9,49 @@ class HungryTimer extends React.Component {
 
 		super(props);
 
-		this.init = setInterval( () => { this.hungerMalus() }, 10000 );
+		this.initHungry = setInterval( () => { this.hungerMalus() }, 1728000 );
+
+		this.initCheckIfHungry = setInterval( () => { this.checkIfHungry() }, 1000 );
+
+		this.initPoo;
+
+		this.clean = 100;
+
+		this.go = props.go;
+
+		this.hunger = 100;
+
+		this.feed = false;
 
 		this.state = { 
 
+			//loulou: props.loulou
 		}
 	}
 
 	hungerMalus() {
 
-		this.state.hunger--;
+		this.hunger--;
 
-		console.log("hunger = " + this.state.hunger);
+		console.log("this.hunger = " + this.hunger);
 
 		this.checkIfHungry();
 	}
 
 	checkIfHungry() {
 
-		if(this.state.hunger < 50) {
+		if(this.hunger > 200) {
+
+			this.hunger = 100;
+
+			console.log("the pet is not hungry");
+
+			const action = { type: "PROBLEM" };
+
+			this.props.dispatch(action);
+		}
+
+		if(this.hunger < 75) {
 
 			console.log("the pet is hungry");
 
@@ -36,7 +60,16 @@ class HungryTimer extends React.Component {
 			this.props.dispatch(action);
 		}
 
-		if(this.state.hunger <=0) {
+		if(this.hunger < 50) {
+
+			console.log("the pet is hungry");
+
+			const action = { type: "PROBLEM" };
+
+			this.props.dispatch(action);
+		}
+
+		if(this.hunger <= 0) {
 
 			console.log("dead");
 
@@ -46,34 +79,102 @@ class HungryTimer extends React.Component {
 		}
 	}
 
-	checkIfFoodExists() {
+	askClean() {
 
+		this.clean--;
+
+		console.log("this.clean = " + this.clean);
+
+		this.checkIfClean();
+	}
+
+	checkIfClean() {
+
+		if(this.clean > 150) {
+
+			this.clean = 100;
+
+			console.log("the pet is not dirty");
+
+			const action = { type: "PROBLEM" };
+
+			this.props.dispatch(action);
+		}
+
+		if(this.clean < 50) {
+
+			console.log("the pet is not clean");
+
+			const action = { type: "POO" };
+
+			this.props.dispatch(action);
+		}
+	}
+
+	componentDidUpdate() { 
+
+		console.log("did update");
+
+		console.log("in update, go = " + this.go);
+
+		if(this.go) {
+
+			this.hunger += 25;
+
+			this.initPoo = setInterval( () => { this.askClean() }, 10000 );
+		}
+
+		if(!this.go) {
+
+			this.hunger += 25;
+
+			this.initPoo = setInterval( () => { this.askClean() }, 10000 );
+		}
+
+		console.log("out update, go = " + this.go )
+
+		console.log("out update, this.hunger = " + this.hunger)
 	}
 
 	render() {
 
-		return (
-			<View>
-				<Text style={styles.food}>{ this.props.food }</Text>
-				<Text>{ this.state.hunger }</Text>
-			</View>
-		)
+		return null;
 	}
 }
 
 const styles = StyleSheet.create({
+
 	food: {
+		
 		//display: 'none'
 	}
 });
 
 const mapStateToProps = (state) => {
 
+	console.log('in mapStateToProps')
+
 	return {
 		
-		AddFood: state.food
+		go: state.values.go,
+		loulou: state.values
 	}
 }
 
 export default connect(mapStateToProps)(HungryTimer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

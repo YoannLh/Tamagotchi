@@ -1,10 +1,8 @@
 
 
-const initialState = { hunger: 100 }
+const initialState = { go: true, loulou: true }
 
 function getValuesWhenButtonsPressed(state = initialState, action) {
-
-	console.log("state : " + state);
 
 	let nextState;
 
@@ -12,10 +10,23 @@ function getValuesWhenButtonsPressed(state = initialState, action) {
 
 		case "ADD_FOOD":
 
-		nextState = { ...state, hunger: "" };
+			if(initialState.go === true) { 
 
-		return nextState;
+				nextState = { ...state, go: false, loulou: false };
 
+			} else {
+
+				nextState = { ...state, go: true, loulou: true };
+			}
+
+			return nextState;
+
+		case "CLEANING":
+
+		case "PLAYING":
+
+		case "HEALTHING":
+			
 	default:
 
     	return state;

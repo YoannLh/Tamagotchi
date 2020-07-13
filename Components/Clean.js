@@ -17,15 +17,26 @@ class Clean extends React.Component {
 		this.props.dispatch(action);
 
 		this.changeAnimations();
+
+		this.cleaning();
 	}
 
 	changeAnimations() {
 
 		console.log("changeAnimations");
 
-		const action = { type: "CHANGE_ANIMATION" };
+		const action = { type: "KILL_CURRENT_ANIMATION" };
 
 		setTimeout( () => { this.props.dispatch(action) }, 4000);
+	}
+
+	cleaning() {
+
+		console.log("cleanig")
+
+		const action = { type: "CLEANING" }
+
+		this.props.dispatch(action);
 	}
 
 	render() {

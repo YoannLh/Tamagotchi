@@ -2,14 +2,10 @@
 
 const initialState = { 
 
-	requireImage: require('../../animations/little.gif'),
-	addFood: 25
-
+	requireImage: require('../../animations/little.gif')
 }
 
 function getAnimationsWhenPressed(state = initialState, action) {
-
-	console.log("state : " + state);
 
 	let nextState;
 
@@ -59,7 +55,7 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		case 'PLAY':
 
-	  		nextState = { ...state, requireImage: require('../../animations/eating.gif') };
+	  		nextState = { ...state, requireImage: require('../../animations/play.gif') };
 
 		  	return nextState
 
@@ -71,7 +67,7 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		case 'POO':
 
-	  		nextState = { ...state, requireImage: require('../../animations/eating.gif') };
+	  		nextState = { ...state, requireImage: require('../../animations/poo.gif') };
 
 		  	return nextState
 
@@ -87,14 +83,11 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		  	return nextState
 
-		case 'CHANGE_ANIMATION':
+		case 'KILL_CURRENT_ANIMATION':
 
 			nextState = { ...state, requireImage: require('../../animations/little.gif') };
 
 			return nextState
-
-		case "ADD_FOOD":
-
 
 	default:
 
