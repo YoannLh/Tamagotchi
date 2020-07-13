@@ -59,6 +59,12 @@ function getAnimationsWhenPressed(state = initialState, action) {
 
 		  	return nextState
 
+		case 'SAD':
+
+			nextState = { ...state, requireImage: require('../../animations/sad.gif') };
+
+		  	return nextState
+
 		case 'CLEAN':
 
 	  		nextState = { ...state, requireImage: require('../../animations/eating.gif') };

@@ -1,6 +1,6 @@
 
 
-const initialState = { go: true, loulou: true }
+const initialState = { goFoodAndPoo: true, goShower: true, goPlay: true, goCare: true, loulou: true }
 
 function getValuesWhenButtonsPressed(state = initialState, action) {
 
@@ -12,20 +12,47 @@ function getValuesWhenButtonsPressed(state = initialState, action) {
 
 			if(initialState.go === true) { 
 
-				nextState = { ...state, go: false, loulou: false };
+				nextState = { ...state, goFoodAndPoo: false, loulou: false };
 
 			} else {
 
-				nextState = { ...state, go: true, loulou: true };
+				nextState = { ...state, goFoodAndPoo: true, loulou: true };
 			}
 
 			return nextState;
 
-		case "CLEANING":
+		case "SHOWER":
 
-		case "PLAYING":
+			if(initialState.go === true) { 
 
-		case "HEALTHING":
+				nextState = { ...state, goShower: false, loulou: false };
+
+			} else {
+
+				nextState = { ...state, goShower: true, loulou: true };
+			}
+
+		case "PLAY":
+
+			if(initialState.go === true) { 
+
+				nextState = { ...state, goPlay: false, loulou: false };
+
+			} else {
+
+				nextState = { ...state, goPlay: true, loulou: true };
+			}
+
+		case "CARE":
+
+			if(initialState.go === true) { 
+
+				nextState = { ...state, goCare: false, loulou: false };
+
+			} else {
+
+				nextState = { ...state, goCare: true, loulou: true };
+			}
 			
 	default:
 

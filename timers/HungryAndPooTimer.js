@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 
 import { connect } from 'react-redux'
 
-class HungryTimer extends React.Component {
+class HungryAndPooTimer extends React.Component {
 
 	constructor(props) {
 
@@ -17,7 +17,7 @@ class HungryTimer extends React.Component {
 
 		this.clean = 100;
 
-		this.go = props.go;
+		this.goFood = props.go;
 
 		this.hunger = 100;
 
@@ -115,23 +115,23 @@ class HungryTimer extends React.Component {
 
 		console.log("did update");
 
-		console.log("in update, go = " + this.go);
+		console.log("in update, goFoodAndPoo = " + this.goFoodAndPoo);
 
-		if(this.go) {
-
-			this.hunger += 25;
-
-			this.initPoo = setInterval( () => { this.askClean() }, 10000 );
-		}
-
-		if(!this.go) {
+		if(this.goFoodAndPoo) {
 
 			this.hunger += 25;
 
-			this.initPoo = setInterval( () => { this.askClean() }, 10000 );
+			this.initPoo = setTimeout( () => { this.askClean() }, 900000 );
 		}
 
-		console.log("out update, go = " + this.go )
+		if(!this.goFoodAndPoo) {
+
+			this.hunger += 25;
+
+			this.initPoo = setTimeout( () => { this.askClean() }, 900000 );
+		}
+
+		console.log("out update, goFoodAndPoo = " + this.goFoodAndPoo )
 
 		console.log("out update, this.hunger = " + this.hunger)
 	}
@@ -156,12 +156,12 @@ const mapStateToProps = (state) => {
 
 	return {
 		
-		go: state.values.go,
+		goFoodAndPoo: state.values.goFoodAndPoo,
 		loulou: state.values
 	}
 }
 
-export default connect(mapStateToProps)(HungryTimer);
+export default connect(mapStateToProps)(HungryAndPooTimer);
 
 
 
